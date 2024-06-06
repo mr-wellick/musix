@@ -4,7 +4,7 @@ import "../app.css";
 </script>
 
 <div class="grid grid-cols-12">
-    <div class="col-span-2">
+    <div class="col-span-2 justify-items-center">
         <Sidebar />
     </div>
 
@@ -13,6 +13,6 @@ import "../app.css";
     </div>
 
     <div class="col-span-1">
-        <slot></slot>
+        Menu
     </div>
 </div>
