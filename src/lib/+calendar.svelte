@@ -2,7 +2,7 @@
 	import dayjs from 'dayjs';
 
 	const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-	let date = dayjs().format('YYYY-DD-MM');
+	let date = dayjs().format('YYYY-MM-DD');
 	$: dayOfWeek = days[dayjs(date).day()];
 	$: dayOfMonth = dayjs(date).date();
 </script>
