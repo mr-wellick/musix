@@ -7,7 +7,7 @@
 	$: dayOfMonth = dayjs(date).date();
 </script>
 
-<div class="flex flex-col items-center">
+<div class="flex flex-col items-center py-3">
 	<p>{dayOfWeek}</p>
 	<p class="text-9xl">{dayOfMonth}</p>
 	<label for="date-picker">
