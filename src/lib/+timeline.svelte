@@ -25,13 +25,13 @@
 </script>
 
 <div
-	class="flex"
+	class="flex relative"
 	role="list"
 	on:dragover={(e) => {
 		e.preventDefault();
 		if (dragged) {
 			console.log('drag over');
-			dragged.style.left = e.clientX + 'px';
+			dragged.style.left = '0px';
 			dragged.style.top = e.clientY + 'px';
 		}
 	}}
@@ -49,12 +49,12 @@
 >
 	<ul class="w-full">
 		{#each hours as hour}
-			<li class="h-10 w-12 text-center border-r">{hour}</li>
+			<li class="h-10 w-12 text-center border-r text-gray-400 text-sm">{hour}</li>
 			<div class="after:'' border-b border-gray-150 ml-10"></div>
 		{/each}
 	</ul>
 	<p
-		class="absolute border border-black cursor-pointer"
+		class="absolute cursor-pointer ml-12 w-11/12 bg-musix-red border border-musix-red-border rounded"
 		draggable="true"
 		on:drag={(e) => {
 			//console.log('dragging');

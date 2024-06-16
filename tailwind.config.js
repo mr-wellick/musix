@@ -4,7 +4,9 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				'musix-blue': '#2193b0'
+				'musix-blue': '#2193b0',
+				'musix-red': '#f3bbcf',
+				'musix-red-border': '#ec8db0'
 			}
 		}
 	},
