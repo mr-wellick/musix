@@ -21,46 +21,51 @@
 		}
 	];
 	let dragged: EventTarget | null;
+	const hours = Array.from({ length: 24 }, (_, index) => index);
 </script>
 
-<div class="grid grid-cols-2">
-	<div
-		role="list"
-		on:dragover={(e) => {
-			e.preventDefault();
-			if (dragged) {
-				console.log('drag over');
-				dragged.style.left = e.clientX + 'px';
-				dragged.style.top = e.clientY + 'px';
-			}
+<div
+	class="flex"
+	role="list"
+	on:dragover={(e) => {
+		e.preventDefault();
+		if (dragged) {
+			console.log('drag over');
+			dragged.style.left = e.clientX + 'px';
+			dragged.style.top = e.clientY + 'px';
+		}
+	}}
+	on:dragenter={(e) => {
+		//console.log('drag enter');
+	}}
+	on:dragleave={(e) => {
+		//console.log('drag leave');
+	}}
+	on:drop={(e) => {
+		e.preventDefault();
+		//console.log('drop', e.target.getBoundingClientRect());
+		//e.target.appendChild(dragged);
+	}}
+>
+	<ul class="w-full">
+		{#each hours as hour}
+			<li class="h-10 w-12 text-center border-r">{hour}</li>
+			<div class="after:'' border-b border-gray-150 ml-10"></div>
+		{/each}
+	</ul>
+	<p
+		class="absolute border border-black cursor-pointer"
+		draggable="true"
+		on:drag={(e) => {
+			//console.log('dragging');
 		}}
-		on:dragenter={(e) => {
-			//console.log('drag enter');
+		on:dragstart={(e) => {
+			dragged = e.target;
 		}}
-		on:dragleave={(e) => {
-			//console.log('drag leave');
+		on:dragend={(e) => {
+			//console.log('drag end');
 		}}
-		on:drop={(e) => {
-			e.preventDefault();
-			//console.log('drop', e.target.getBoundingClientRect());
-			//e.target.appendChild(dragged);
-		}}
-		class="border border-dashed border-black h-96"
 	>
-		<p
-			on:drag={(e) => {
-				//console.log('dragging');
-			}}
-			on:dragstart={(e) => {
-				dragged = e.target;
-			}}
-			on:dragend={(e) => {
-				//console.log('drag end');
-			}}
-			draggable="true"
-			class="absolute"
-		>
-			drag me
-		</p>
-	</div>
+		drag me
+	</p>
 </div>
