@@ -24,8 +24,8 @@
 </script>
 
 <div class="grid grid-cols-2">
-	<!-- svelte-ignore a11y-no-static-element-interactions -->
 	<div
+		role="list"
 		on:dragover={(e) => {
 			e.preventDefault();
 			if (dragged) {
