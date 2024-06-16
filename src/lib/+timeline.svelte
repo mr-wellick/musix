@@ -28,32 +28,32 @@
 	<div
 		on:dragover={(e) => {
 			e.preventDefault();
-			//console.log('drag over');
-			console.log(e.clientX, e.clientY);
-			dragged.style.left = e.clientY + 'px';
-			dragged.style.top = e.clientX + 'px';
+			console.log('drag over');
+			dragged.style.left = e.clientX + 'px';
+			dragged.style.top = e.clientY + 'px';
 		}}
 		on:dragenter={(e) => {
 			//console.log('drag enter');
 		}}
-		on:dragleave={(e) => console.log('drag leave')}
+		on:dragleave={(e) => {
+			//console.log('drag leave');
+		}}
 		on:drop={(e) => {
 			e.preventDefault();
 			//console.log('drop', e.target.getBoundingClientRect());
 			//e.target.appendChild(dragged);
 		}}
-		class="border border-dashed border-black h-96 relative"
+		class="border border-dashed border-black h-96"
 	>
 		<p
 			on:drag={(e) => {
-				console.log('dragging');
-				//console.log(dragged.getBoundingClientRect());
+				//console.log('dragging');
 			}}
 			on:dragstart={(e) => {
 				dragged = e.target;
 			}}
 			on:dragend={(e) => {
-				console.log('drag end');
+				//console.log('drag end');
 			}}
 			draggable="true"
 			class="absolute"
