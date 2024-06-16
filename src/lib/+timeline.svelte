@@ -20,7 +20,7 @@
 			]
 		}
 	];
-	let dragged;
+	let dragged: EventTarget | null;
 </script>
 
 <div class="grid grid-cols-2">
@@ -28,9 +28,11 @@
 	<div
 		on:dragover={(e) => {
 			e.preventDefault();
-			console.log('drag over');
-			dragged.style.left = e.clientX + 'px';
-			dragged.style.top = e.clientY + 'px';
+			if (dragged) {
+				console.log('drag over');
+				dragged.style.left = e.clientX + 'px';
+				dragged.style.top = e.clientY + 'px';
+			}
 		}}
 		on:dragenter={(e) => {
 			//console.log('drag enter');
