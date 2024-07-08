@@ -25,7 +25,7 @@
 </script>
 
 <div
-	class="flex relative"
+	class="flex relative w-full"
 	role="list"
 	on:dragover={(e) => {
 		e.preventDefault();
@@ -54,7 +54,7 @@
 		{/each}
 	</ul>
 	<p
-		class="absolute cursor-pointer ml-12 w-11/12 bg-musix-red border border-musix-red-border rounded"
+		class="absolute cursor-pointer w-full bg-musix-red border border-musix-red-border rounded"
 		draggable="true"
 		on:drag={(e) => {
 			//console.log('dragging');
