@@ -24,8 +24,9 @@
 			tasks: [
 				{
 					name: 'Scale in 3rds #1',
-					description: 'Practice scale in 3rds ascending/descending',
-					duration: null,
+					description:
+						'Practice scale in 3rds ascending/descending around the circle of fifths. Use scale pattern #1 (one position, no shifting)',
+					duration: '10m',
 					bpm: '80'
 				}
 			]
