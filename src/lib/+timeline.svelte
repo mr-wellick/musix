@@ -47,14 +47,14 @@
 		//e.target.appendChild(dragged);
 	}}
 >
-	<ul class="w-full">
+	<ul>
 		{#each hours as hour}
 			<li class="h-10 w-12 text-center border-r text-gray-400 text-sm">{hour}</li>
-			<div class="after:'' border-b border-gray-150 ml-10"></div>
+			<!-- <div class="after:'' border-b border-gray-150 ml-10"></div> -->
 		{/each}
 	</ul>
 	<p
-		class="absolute cursor-pointer w-full bg-musix-red border border-musix-red-border rounded"
+		class="relative cursor-pointer w-full bg-musix-red border border-musix-red-border rounded h-min"
 		draggable="true"
 		on:drag={(e) => {
 			//console.log('dragging');
