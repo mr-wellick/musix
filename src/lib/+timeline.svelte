@@ -18,6 +18,17 @@
 					bpm: '60'
 				}
 			]
+		},
+		{
+			title: 'Scale',
+			tasks: [
+				{
+					name: 'Scale in 3rds #1',
+					description: 'Practice scale in 3rds ascending/descending',
+					duration: null,
+					bpm: '80'
+				}
+			]
 		}
 	];
 	let dragged: EventTarget | null;
@@ -53,19 +64,26 @@
 			<!-- <div class="after:'' border-b border-gray-150 ml-10"></div> -->
 		{/each}
 	</ul>
-	<p
-		class="relative cursor-pointer w-full bg-musix-red border border-musix-red-border rounded h-min"
-		draggable="true"
-		on:drag={(e) => {
-			//console.log('dragging');
-		}}
-		on:dragstart={(e) => {
-			dragged = e.target;
-		}}
-		on:dragend={(e) => {
-			//console.log('drag end');
-		}}
-	>
-		drag me
-	</p>
+
+	{#each todos as todo}
+		<div
+			role="contentinfo"
+			class="relative cursor-pointer w-full bg-musix-red border border-musix-red-border rounded h-min"
+			draggable="true"
+			on:drag={(e) => {
+				//console.log('dragging');
+			}}
+			on:dragstart={(e) => {
+				dragged = e.target;
+			}}
+			on:dragend={(e) => {
+				//console.log('drag end');
+			}}
+		>
+			<p>
+				{todo.title}
+			</p>
+			{JSON.stringify(todo.tasks)}
+		</div>
+	{/each}
 </div>
