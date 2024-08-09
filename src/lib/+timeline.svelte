@@ -1,6 +1,9 @@
 <script lang="ts">
 	//import dayjs from 'dayjs';
 
+    // todo 1: fix dragging issue: when we drag table to top of page, the table does not reach the top of its container (there is a gap)
+    // todo 2: UI, figure out how to display grid lines.
+
 	let todos = [
 		{
 			category: 'Rhythm',
@@ -54,15 +57,15 @@
 		//e.target.appendChild(dragged);
 	}}
 >
-	<ul>
+	<ul> 
 		{#each hours as hour}
 			<li class="h-10 w-12 text-center border-r text-gray-400 text-sm">{hour}</li>
-			<!-- <div class="after:'' border-b border-gray-150 ml-10"></div> -->
+            <!-- <div class="after:'' border-b border-gray-150 ml-10"></div> -->
 		{/each}
 	</ul>
 	{#each todos as todo}
 		<table
-			class="absolute table cursor-pointer border border-musix-red-border rounded h-min"
+			class="table cursor-pointer border border-musix-red-border rounded h-min"
 			role="contentinfo"
 			draggable="true"
             on:drag={() => {
