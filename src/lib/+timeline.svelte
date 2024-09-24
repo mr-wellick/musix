@@ -1,9 +1,18 @@
 <script lang="ts">
-	//import dayjs from 'dayjs';
+	import { scaleTime } from "d3-scale";
+	import dayjs  from 'dayjs';
+
+    const currentDay = dayjs(Date.now())
+    const militaryTime = [
+        currentDay.hour(0).toDate(),
+        currentDay.hour(23).toDate(),
+    ]
+
+    const yScale = scaleTime(militaryTime, [0, 500])
+    console.log(yScale.domain())
 
 	// todo 1: fix dragging issue: when we drag table to top of page, the table does not reach the top of its container (there is a gap)
 	// todo 2: UI, figure out how to display grid lines.
-
 	let todos = [
 		{
 			category: 'Rhythm',
