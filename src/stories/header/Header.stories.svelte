@@ -8,7 +8,7 @@
     component: Header,
     tags: ['autodocs'],
     args: {
-      user: undefined,
+      user: null,
       onLogout: fn(),
     },
   });

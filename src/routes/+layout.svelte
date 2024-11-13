@@ -1,9 +1,15 @@
 <script lang="ts">
+  import Header from '../stories/header/Header.svelte';
+  import { userStore } from '$lib/userStore.svelte';
   import '../app.css';
-  import Header from '../stories/Header.svelte';
+
   let { children } = $props();
+
+  const onLogout = () => {
+    $userStore = null;
+  };
 </script>
 
-<Header />
+<Header {onLogout} user={$userStore} />
 
 {@render children()}
