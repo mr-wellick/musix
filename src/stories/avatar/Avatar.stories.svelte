@@ -3,14 +3,13 @@
   import Avatar from './Avatar.svelte';
 
   const { Story } = defineMeta({
-    title: 'Avatar',
+    title: 'Components/Avatar',
     component: Avatar,
     tags: ['autodocs'],
-    // argTypes: {},
-    args: {
-      user: { name: 'Daffy' },
-    },
+    args: {},
   });
 </script>
 
-<Story name="Primary" />
+<Story name="Logged In" args={{ user: { first_name: 'Daffy', last_name: 'Duck' } }} />
+
+<Story name="Logged Out" args={{}} />
