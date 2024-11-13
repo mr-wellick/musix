@@ -12,12 +12,12 @@
   <div class="flex-1">
     <a class="btn btn-ghost text-xl" href="/">Musixx</a>
   </div>
-  <div class="flex-none">
-    <div class="dropdown dropdown-end">
-      {#if user}
+  {#if user}
+    <div class="flex-none">
+      <div class="dropdown dropdown-end">
         <Avatar {user} />
         <ProfileMenu {onLogout} />
-      {/if}
+      </div>
     </div>
-  </div>
+  {/if}
 </div>
