@@ -9,5 +9,5 @@
     <a class="justify-between" href="/account/profile">Profile</a>
   </li>
   <li><a href="/account/settings">Settings</a></li>
-  <li><a href="/login" onclick={onLogout}>Logout</a></li>
+  <li><button onclick={onLogout}>Logout</button></li>
 </ul>

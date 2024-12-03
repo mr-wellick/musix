@@ -4,7 +4,7 @@
   import AppMenu from '../app-menu/AppMenu.svelte';
   import type { Props } from '$lib/types/client.types';
 
-  const { user, onLogout }: Props = $props();
+  const { data, onLogout }: Props = $props();
 </script>
 
 <div class="navbar bg-base-100">
@@ -12,10 +12,10 @@
   <div class="flex-1">
     <a class="btn btn-ghost text-xl" href="/">Musixx</a>
   </div>
-  {#if user}
+  {#if data}
     <div class="flex-none">
       <div class="dropdown dropdown-end">
-        <Avatar {user} />
+        <Avatar {data} />
         <ProfileMenu {onLogout} />
       </div>
     </div>
