@@ -8,11 +8,11 @@
   let { children } = $props();
 
   const onLogout = () => {
-    userStore.data = null;
+    userStore.user = null;
   };
 </script>
 
-<Header {onLogout} data={userStore.data} />
+<Header {onLogout} data={userStore} />
 
 <div class="flex">
   <Sidebar />

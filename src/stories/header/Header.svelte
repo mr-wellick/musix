@@ -2,7 +2,11 @@
   import Avatar from '../avatar/Avatar.svelte';
   import ProfileMenu from '../profile-menu/ProfileMenu.svelte';
   import AppMenu from '../app-menu/AppMenu.svelte';
-  import type { Props } from '$lib/types/client.types';
+
+  interface Props {
+    data: App.Locals['MUSIX_USER'];
+    onLogout: () => void;
+  }
 
   const { data, onLogout }: Props = $props();
 </script>
@@ -12,10 +16,10 @@
   <div class="flex-1">
     <a class="btn btn-ghost text-xl" href="/">Musixx</a>
   </div>
-  {#if data}
+  {#if data.user}
     <div class="flex-none">
       <div class="dropdown dropdown-end">
-        <Avatar {data} />
+        <Avatar user={data.user} />
         <ProfileMenu {onLogout} />
       </div>
     </div>

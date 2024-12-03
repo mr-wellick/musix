@@ -8,12 +8,12 @@
     component: Header,
     tags: ['autodocs'],
     args: {
-      user: null,
+      data: { user: null },
       onLogout: fn(),
     },
   });
 </script>
 
-<Story name="Logged in" args={{ user: { first_name: 'Daffy', last_name: 'Duck' } }} />
+<Story name="Logged in" args={{ data: { user: { first_name: 'Bugs', last_name: 'Bunny' } } }} />
 
 <Story name="Logged out" />
